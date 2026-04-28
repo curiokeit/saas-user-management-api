@@ -1,74 +1,120 @@
 # 🚀 SaaS User Management & Task Management API
 
-A multi-tenant SaaS backend project built with ASP.NET Core Web API.
+A multi-tenant SaaS backend system built with ASP.NET Core Web API.
+
+---
 
 ## 🔥 Features
 
 - Multi-tenant architecture (company-based data isolation)
 - JWT Authentication & Role-Based Authorization
-- User management with Admin/User roles
+- User management (Admin / User roles)
 - Subscription plan system (Free / Pro / Business)
 - User limit control based on plan
 - Task assignment and tracking system
 - Task status updates (Todo / InProgress / Done)
+- RESTful API design
 - Swagger API documentation
+- Full Postman API testing collection
 
-## 🧱 Technologies
+---
 
-- ASP.NET Core
-- C#
+## 🛠 Technologies
+
+- ASP.NET Core Web API
 - Entity Framework Core
 - SQL Server
 - JWT Authentication
-- Swagger
+- Swagger (OpenAPI)
+- Postman
 
-## 👥 Roles
+---
 
-### Admin
-- Create users
-- Assign tasks
-- Upgrade subscription plan
-- View all company data
+## 📂 Project Structure
 
-### User
-- View assigned tasks
-- Update task status
+SaasUserManagement.API/  
+postman/  
+README.md  
 
-## 💳 Subscription Plans
-
-| Plan | User Limit |
-|------|------------|
-| Free | 3 |
-| Pro | 10 |
-| Business | 50 |
-
-## 📌 API Endpoints
-
-### Auth
-- POST /api/Auth/register
-- POST /api/Auth/login
-
-### Users
-- GET /api/Users
-- POST /api/Users
-
-### Plans
-- GET /api/Plans
-- PUT /api/Plans/upgrade
-
-### Dashboard
-- GET /api/Dashboard/summary
-
-### Tasks
-- GET /api/Tasks
-- GET /api/Tasks/my-tasks
-- POST /api/Tasks
-- PUT /api/Tasks/{id}/status
+---
 
 ## ▶️ How to Run
 
-```bash
-dotnet ef database update
-dotnet run
+1. Run database migrations:  
+dotnet ef database update  
 
-Then open: https://localhost:xxxx/swagger
+2. Run the project:  
+dotnet run  
+
+3. Open Swagger:  
+https://localhost:{PORT}/swagger  
+
+---
+
+## 🔐 Authentication
+
+This API uses JWT authentication.
+
+Login endpoint:  
+POST /api/Auth/login  
+
+After login:  
+- Token is returned  
+- Use it in requests:  
+
+Authorization: Bearer {token}  
+
+---
+
+## 📡 API Endpoints
+
+Users:  
+- GET /api/Users  
+- POST /api/Users  
+
+Tasks:  
+- GET /api/Tasks  
+- GET /api/Tasks/my-tasks  
+- POST /api/Tasks  
+- PUT /api/Tasks/{id}/status  
+
+Dashboard:  
+- GET /api/Dashboard/summary  
+
+Plans:  
+- GET /api/Plans  
+- PUT /api/Plans/upgrade  
+
+---
+
+## 🚀 API Testing (Postman)
+
+You can test the API using the included Postman collection:
+
+postman/SaaS API.postman_collection.json  
+
+Steps:
+
+1. Import collection into Postman  
+2. Set base_url = https://localhost:{PORT}  
+3. Run Login request  
+4. Token will be auto-saved  
+5. Test all endpoints  
+
+---
+
+## 💡 Highlights
+
+- Built a real-world SaaS backend system  
+- Implemented secure JWT authentication  
+- Designed RESTful APIs  
+- Created full Postman testing setup  
+- Multi-tenant architecture  
+
+---
+
+## 👨‍💻 Author
+
+Recep Emre Odemis  
+Istanbul, Turkey  
+Software Developer  
